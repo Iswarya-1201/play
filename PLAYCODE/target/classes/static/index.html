@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PLAYCODE | Code. Play. Grow.</title><link rel="stylesheet" href="/style.css"></head>
+<body><header><div class="brand">⚡ PLAY<span>CODE</span></div><div id="topUser" class="top-user"></div></header>
+<main>
+<section id="loginPage" class="panel login">
+  <div class="eyebrow">LEARN BY PLAYING</div><h1>Make coding<br><span>your superpower.</span></h1><p>Practice Java and Python, challenge friends, and climb the leaderboard.</p>
+  <label for="username">Your player name</label><input id="username" maxlength="24" placeholder="e.g. Ishu" autocomplete="off">
+  <button id="loginBtn" class="primary">Enter PLAYCODE →</button><p class="tiny">Demo login uses a username only. Do not enter a password.</p>
+</section>
+<section id="homePage" class="hidden">
+  <div class="welcome"><div><div class="eyebrow">YOUR CODING ARENA</div><h1>Ready, <span id="welcomeName">coder</span>?</h1><p>Pick your challenge and build your streak.</p></div><div class="streak">✦ <b>PLAY TO IMPROVE</b><small>Every question counts</small></div></div>
+  <div class="mode-grid">
+    <button class="mode-card" id="soloBtn"><span class="mode-icon">🎯</span><h2>Solo Practice</h2><p>20 random questions. Your pace, your score.</p><span class="card-link">Start practice →</span></button>
+    <button class="mode-card purple" id="multiBtn"><span class="mode-icon">⚔️</span><h2>Friend Challenge</h2><p>Invite an online player and race on the same quiz.</p><span class="card-link">Find players →</span></button>
+  </div>
+  <div class="board panel"><div class="section-head"><div><div class="eyebrow">TOP CODERS</div><h2>Leaderboard</h2></div><button class="light" id="refreshBoard">↻ Refresh</button></div><div id="leaderboard"></div></div>
+</section>
+<section id="setupPage" class="panel hidden">
+ <button class="back" id="backHome">← Back</button><div class="eyebrow">BUILD YOUR QUIZ</div><h1 id="setupTitle">Choose your path</h1><div class="setup-grid">
+  <div><label>Programming language</label><div id="languageOptions" class="choice-row"></div></div>
+  <div><label>Concept</label><select id="topicSelect"><option value="">Choose a concept</option></select></div>
+ </div><p id="setupHint" class="tiny">A quiz contains 20 random questions from your CSV question bank.</p><button class="primary" id="startQuiz">Start 20-question quiz →</button>
+</section>
+<section id="multiPage" class="panel hidden">
+ <button class="back" id="multiBack">← Back</button><div class="eyebrow">PLAY WITH FRIENDS</div><h1>Online players</h1><p>Ask a player to join your challenge. Both players must be online in PLAYCODE.</p><button class="light" id="refreshPlayers">↻ Refresh players</button><div id="playersList" class="players"></div>
+ <div class="section-head inbox-head"><h2>Challenge inbox / status</h2><button class="light" id="refreshChallenges">Refresh</button></div><div id="challengeList"></div>
+</section>
+<section id="quizPage" class="hidden">
+ <div class="quiz-top"><div><div class="eyebrow" id="quizMode">SOLO PRACTICE</div><h1 id="quizHeading">Loop Challenge</h1></div><div><button id="fullscreenBtn" class="light">⛶ Full screen</button><div class="timer" id="timer">20:00</div></div></div>
+ <p id="matchStatus" class="quiz-note">Ready when you are.</p><div class="progress"><div id="progressBar"></div></div><div class="quiz-meta"><span id="questionCounter">QUESTION 1 OF 20</span><span id="quizTopic">JAVA • LOOPS</span></div>
+ <div class="question-panel panel"><h2 id="questionText">Loading questions…</h2><div id="answerOptions" class="answer-options"></div><div class="question-footer"><button id="prevQuestion" class="light">← Previous</button><button id="nextQuestion" class="primary">Next question →</button></div></div>
+ <div class="quiz-note">🛡️ Focus mode detects leaving this quiz tab. Switching tabs or minimizing may trigger a warning or automatic submission.</div>
+</section>
+<section id="resultPage" class="panel hidden">
+ <div class="result-icon">🏆</div><div class="eyebrow">CHALLENGE COMPLETE</div><h1 id="resultTitle">Nice work!</h1><div class="score-circle"><strong id="resultScore">0</strong><span>/ 20</span></div><p id="resultMessage"></p><div id="matchResults"></div><div class="result-actions"><button class="primary" id="homeBtn">Back to home</button><button class="light" id="againBtn">Try another quiz</button></div>
+</section>
+<div id="toast" class="toast hidden"></div>
+</main><footer>PLAYCODE • Practice honestly. Grow consistently. <span>Java · Python · Spring Boot · MySQL</span></footer>
+<script src="/app.js"></script></body></html>
