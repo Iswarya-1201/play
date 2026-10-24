@@ -1,39 +1,82 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PLAYCODE | Code. Play. Grow.</title><link rel="stylesheet" href="/style.css"></head>
-<body><header><div class="brand">⚡ PLAY<span>CODE</span></div><div id="topUser" class="top-user"></div></header>
-<main>
-<section id="loginPage" class="panel login">
-  <div class="eyebrow">LEARN BY PLAYING</div><h1>Make coding<br><span>your superpower.</span></h1><p>Practice Java and Python, challenge friends, and climb the leaderboard.</p>
-  <label for="username">Your player name</label><input id="username" maxlength="24" placeholder="e.g. Ishu" autocomplete="off">
-  <button id="loginBtn" class="primary">Enter PLAYCODE →</button><p class="tiny">Demo login uses a username only. Do not enter a password.</p>
-</section>
-<section id="homePage" class="hidden">
-  <div class="welcome"><div><div class="eyebrow">YOUR CODING ARENA</div><h1>Ready, <span id="welcomeName">coder</span>?</h1><p>Pick your challenge and build your streak.</p></div><div class="streak">✦ <b>PLAY TO IMPROVE</b><small>Every question counts</small></div></div>
-  <div class="mode-grid">
-    <button class="mode-card" id="soloBtn"><span class="mode-icon">🎯</span><h2>Solo Practice</h2><p>20 random questions. Your pace, your score.</p><span class="card-link">Start practice →</span></button>
-    <button class="mode-card purple" id="multiBtn"><span class="mode-icon">⚔️</span><h2>Friend Challenge</h2><p>Invite an online player and race on the same quiz.</p><span class="card-link">Find players →</span></button>
-  </div>
-  <div class="board panel"><div class="section-head"><div><div class="eyebrow">TOP CODERS</div><h2>Leaderboard</h2></div><button class="light" id="refreshBoard">↻ Refresh</button></div><div id="leaderboard"></div></div>
-</section>
-<section id="setupPage" class="panel hidden">
- <button class="back" id="backHome">← Back</button><div class="eyebrow">BUILD YOUR QUIZ</div><h1 id="setupTitle">Choose your path</h1><div class="setup-grid">
-  <div><label>Programming language</label><div id="languageOptions" class="choice-row"></div></div>
-  <div><label>Concept</label><select id="topicSelect"><option value="">Choose a concept</option></select></div>
- </div><p id="setupHint" class="tiny">A quiz contains 20 random questions from your CSV question bank.</p><button class="primary" id="startQuiz">Start 20-question quiz →</button>
-</section>
-<section id="multiPage" class="panel hidden">
- <button class="back" id="multiBack">← Back</button><div class="eyebrow">PLAY WITH FRIENDS</div><h1>Online players</h1><p>Ask a player to join your challenge. Both players must be online in PLAYCODE.</p><button class="light" id="refreshPlayers">↻ Refresh players</button><div id="playersList" class="players"></div>
- <div class="section-head inbox-head"><h2>Challenge inbox / status</h2><button class="light" id="refreshChallenges">Refresh</button></div><div id="challengeList"></div>
-</section>
-<section id="quizPage" class="hidden">
- <div class="quiz-top"><div><div class="eyebrow" id="quizMode">SOLO PRACTICE</div><h1 id="quizHeading">Loop Challenge</h1></div><div><button id="fullscreenBtn" class="light">⛶ Full screen</button><div class="timer" id="timer">20:00</div></div></div>
- <p id="matchStatus" class="quiz-note">Ready when you are.</p><div class="progress"><div id="progressBar"></div></div><div class="quiz-meta"><span id="questionCounter">QUESTION 1 OF 20</span><span id="quizTopic">JAVA • LOOPS</span></div>
- <div class="question-panel panel"><h2 id="questionText">Loading questions…</h2><div id="answerOptions" class="answer-options"></div><div class="question-footer"><button id="prevQuestion" class="light">← Previous</button><button id="nextQuestion" class="primary">Next question →</button></div></div>
- <div class="quiz-note">🛡️ Focus mode detects leaving this quiz tab. Switching tabs or minimizing may trigger a warning or automatic submission.</div>
-</section>
-<section id="resultPage" class="panel hidden">
- <div class="result-icon">🏆</div><div class="eyebrow">CHALLENGE COMPLETE</div><h1 id="resultTitle">Nice work!</h1><div class="score-circle"><strong id="resultScore">0</strong><span>/ 20</span></div><p id="resultMessage"></p><div id="matchResults"></div><div class="result-actions"><button class="primary" id="homeBtn">Back to home</button><button class="light" id="againBtn">Try another quiz</button></div>
-</section>
-<div id="toast" class="toast hidden"></div>
-</main><footer>PLAYCODE • Practice honestly. Grow consistently. <span>Java · Python · Spring Boot · MySQL</span></footer>
-<script src="/app.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d2a">
+  <meta name="description" content="PLAYVERSE — Learn to code, challenge friends, and level up your skills.">
+  <title>PLAYVERSE | Code. Compete. Conquer.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="PLAYVERSE home"><span class="brand-mark">✦</span><span>PLAY<span class="brand-accent">VERSE</span></span></a>
+    <div class="header-right"><span class="online-pill"><i></i> YOUR ARENA IS LIVE</span><div id="topUser" class="top-user"></div></div>
+  </header>
+  <main>
+    <section id="loginPage" class="panel login glass-card">
+      <div class="login-copy">
+        <div class="eyebrow"><span class="eyebrow-spark">✦</span> YOUR NEXT LEVEL STARTS HERE</div>
+        <h1>Think it.<br>Code it.<br><span class="gradient-text">Conquer it.</span></h1>
+        <p class="login-description">A universe where coding meets competition. Sharpen your skills, challenge your friends, and become a legend.</p>
+        <div class="feature-chips"><span>⌘ Learn by playing</span><span>⚡ Real-time duels</span><span>🏆 Climb the ranks</span></div>
+      </div>
+      <div class="login-form-wrap">
+        <div class="login-emblem">🎮</div>
+        <div class="eyebrow">PLAYER ACCESS</div>
+        <h2>Enter the arena</h2>
+        <p class="muted-copy">Choose your player name to begin your journey.</p>
+        <label for="username">PLAYER NAME</label>
+        <input id="username" maxlength="24" placeholder="e.g. Ishu" autocomplete="off" aria-label="Your player name">
+        <button id="loginBtn" class="primary full-width"><span>Enter PLAYVERSE</span><span aria-hidden="true">↗</span></button>
+        <p class="tiny privacy-note">🔒 Demo login uses a username only. No password needed.</p>
+      </div>
+      <div class="login-orbit orbit-a" aria-hidden="true">{ }</div><div class="login-orbit orbit-b" aria-hidden="true">&lt;/&gt;</div>
+    </section>
+
+    <section id="homePage" class="hidden">
+      <div class="welcome hero-panel">
+        <div class="welcome-copy"><div class="eyebrow"><span class="live-dot"></span> YOUR CODING UNIVERSE</div><h1>Welcome back,<br><span id="welcomeName" class="gradient-text">coder</span><span class="heading-mark"> ✨</span></h1><p>Every challenge is a chance to level up. What will you conquer today?</p></div>
+        <div class="streak"><div class="streak-icon">⚡</div><div><b>LEVEL UP YOUR MIND</b><small>Play • Learn • Repeat</small></div><span class="streak-orbit">✦</span></div>
+        <div class="hero-decoration decor-code" aria-hidden="true">&lt;/&gt;</div><div class="hero-decoration decor-star" aria-hidden="true">✦</div>
+      </div>
+      <div class="section-kicker"><span>CHOOSE YOUR ADVENTURE</span><span class="kicker-line"></span></div>
+      <div class="mode-grid">
+        <button class="mode-card solo-card" id="soloBtn"><span class="card-topline"><span class="mode-icon">🎯</span><span class="mode-tag">YOUR PACE</span></span><h2>Solo Quest</h2><p>Train your brain with 20 random questions and beat your personal best.</p><span class="card-bottom"><span class="card-link">Start your quest</span><span class="arrow-circle">↗</span></span><span class="card-glow" aria-hidden="true"></span></button>
+        <button class="mode-card friend-card" id="multiBtn"><span class="card-topline"><span class="mode-icon">⚔️</span><span class="mode-tag">LIVE BATTLE</span></span><h2>Friend Showdown</h2><p>Challenge an online player. Same questions, one winner, endless bragging rights.</p><span class="card-bottom"><span class="card-link">Find your rival</span><span class="arrow-circle">↗</span></span><span class="card-glow" aria-hidden="true"></span></button>
+      </div>
+      <div class="board panel glass-card"><div class="section-head"><div><div class="eyebrow">THE HALL OF FAME</div><h2>Leaderboard <span class="title-spark">✦</span></h2><p class="section-subtitle">The sharpest minds in the PLAYVERSE.</p></div><button class="light" id="refreshBoard">↻ <span>Refresh</span></button></div><div id="leaderboard" class="leaderboard-list"></div></div>
+    </section>
+
+    <section id="setupPage" class="panel glass-card hidden">
+      <button class="back" id="backHome">← <span>Back to home</span></button><div class="eyebrow">DESIGN YOUR CHALLENGE</div><h1 id="setupTitle">Choose your path</h1><p class="section-subtitle">Pick your language and focus area. Your next level awaits.</p>
+      <div class="setup-grid"><div class="setup-block"><label>01 / PROGRAMMING LANGUAGE</label><div id="languageOptions" class="choice-row"></div></div><div class="setup-block"><label for="topicSelect">02 / CHOOSE A CONCEPT</label><select id="topicSelect"><option value="">Choose a concept</option></select></div></div>
+      <div class="setup-tip"><span>💡</span><span id="setupHint" class="tiny">A quiz contains 20 random questions from your CSV question bank.</span></div><button class="primary" id="startQuiz">Start 20-question quiz <span>→</span></button>
+    </section>
+
+    <section id="multiPage" class="panel glass-card hidden">
+      <button class="back" id="multiBack">← <span>Back to home</span></button><div class="eyebrow">SQUAD UP</div><h1>Find your <span class="gradient-text">rival.</span></h1><p>Challenge a player who's online. They'll need to be in PLAYVERSE too.</p><div class="section-head player-section-head"><h2>Players online <span class="online-count-dot"></span></h2><button class="light" id="refreshPlayers">↻ Refresh</button></div><div id="playersList" class="players"></div>
+      <div class="section-head inbox-head"><div><div class="eyebrow">YOUR INVITES</div><h2>Challenge inbox</h2></div><button class="light" id="refreshChallenges">↻ Refresh</button></div><div id="challengeList" class="challenge-list"></div>
+    </section>
+
+    <section id="quizPage" class="hidden quiz-shell">
+      <div class="quiz-top"><div><div class="eyebrow" id="quizMode">SOLO QUEST</div><h1 id="quizHeading">Loop Challenge</h1><div class="quiz-subline"><span class="quiz-live-dot"></span> PLAYVERSE CHALLENGE</div></div><div class="quiz-tools"><button id="fullscreenBtn" class="light">⛶ <span>Focus mode</span></button><div class="timer" id="timer">20:00</div></div></div>
+      <p id="matchStatus" class="quiz-note">Ready when you are.</p><div class="progress"><div id="progressBar"></div></div><div class="quiz-meta"><span id="questionCounter">QUESTION 1 OF 20</span><span id="quizTopic">JAVA • LOOPS</span></div>
+      <div class="question-panel panel glass-card"><div class="question-label"><span class="question-label-icon">✧</span> YOUR NEXT QUESTION</div><h2 id="questionText">Loading questions…</h2><div id="answerOptions" class="answer-options"></div><div class="question-footer"><button id="prevQuestion" class="light">← Previous</button><button id="nextQuestion" class="primary">Next question <span>→</span></button></div></div>
+      <div class="quiz-note footer-note">🛡️ Focus mode records leaving the quiz tab. Stay on this page while you play.</div>
+    </section>
+
+    <section id="resultPage" class="panel glass-card result-panel hidden">
+      <div class="result-confetti" aria-hidden="true">✦　✧　✦</div><div class="result-icon">🏆</div><div class="eyebrow">QUEST COMPLETED</div><h1 id="resultTitle">Nice work!</h1><p id="resultMessage"></p><div class="score-circle"><div><strong id="resultScore">0</strong><span>/ 20</span></div></div><div id="matchResults" class="match-results"></div><div class="result-actions"><button class="primary" id="homeBtn">Back to home <span>↗</span></button><button class="light" id="againBtn">Play another quest ↻</button></div>
+    </section>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  </main>
+  <footer><div class="footer-brand">✦ PLAYVERSE</div><div>Code. Compete. Conquer.</div><span>JAVA · PYTHON · FRIENDS · GLORY</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
