@@ -1,9 +1,0 @@
-package com.playverse.app;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class PlayVerseApplication {
-    public static void main(String[] args) { SpringApplication.run(PlayVerseApplication.class, args); }
-}
